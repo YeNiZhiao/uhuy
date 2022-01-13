@@ -1,0 +1,421 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  background-image: url(../img/background/okeh.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Font  face */
+@font-face {
+  font-family: "Rubik";
+  src: url(../font/Rubik-VariableFont_wght.ttf);
+}
+@font-face {
+  src: url(../font/Staatliches-Regular.ttf);
+  font-family: "Static";
+}
+@font-face {
+  src: url(../font/HammersmithOne-Regular.ttf);
+  font-family: "Hammer";
+}
+
+marquee {
+  height: 40px;
+  background-color: #333;
+  color: #ddd;
+  padding-top: 7px;
+  font-size: 18px;
+  background-attachment: fixed;
+  font-family: "Rubik";
+}
+
+/* Slider */
+
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  background-position: 10px 10px;
+}
+.slider h3,
+.slider h5 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.slider h3 {
+  margin-top: 80px;
+}
+.slides li img {
+  width: 500px;
+}
+h1 {
+  text-align: center;
+  font-weight: bold;
+
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: "Static";
+  transition: 0.5s;
+}
+
+/* Vektor Balon */
+.balon1 {
+  width: 50px;
+  margin-top: -20px;
+  margin-left: -10px;
+}
+.balon2 {
+  width: 50px;
+  margin-top: -20px;
+  margin-right: -10px;
+}
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Rubik";
+}
+.tgl {
+  font-family: "Hammer";
+  animation: tgl 4s infinite ease-in;
+  margin-bottom: 10px;
+  margin-right: 0;
+  margin-top: 40px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.gif {
+  position: absolute;
+  top: 580px;
+  left: 120px;
+  width: 100px;
+  margin-top: 0;
+  z-index: 1;
+}
+
+/* Kotak Dialog */
+.judul {
+  text-align: center;
+  font-family: "Hammer";
+  font-size: 27px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.dialog {
+  width: 100%;
+  box-shadow: 0px 2px 3px #333, 0px -2px 5px #333;
+  padding-top: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.dialog img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 10px;
+  border: 2px solid #444;
+}
+.dialog h3 {
+  font-family: "Rubik" !important ;
+  font-size: 16px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: 2px solid #ccc;
+  background-color: gray;
+  padding: 10px;
+  color: #ddd;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.dialog audio {
+  width: 80%;
+  color: #222;
+  border: 1.5px solid #444;
+  border-radius: 30px;
+  margin: 10px;
+  box-shadow: 0px 0px 2px 1px #333;
+}
+.dialog .weiying {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateX(120px);
+}
+.dialog .weiying.nah {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1.5s;
+}
+.dialog .weiying.remove {
+  transform: translateX(120px);
+  opacity: 0;
+  transition: 1.5s;
+}
+.dialog .lanzhan {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: 1s;
+}
+
+.dialog .lanzhan.nih {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1.5s;
+}
+
+.dialog .lanzhan.remove {
+  transform: translateX(-120px);
+  opacity: 0;
+  transition: 1.5s;
+}
+
+/* Puisi */
+.puisi {
+  background-image: url(../img/background/hand-painted-watercolor-background-with-sky-clouds-shape.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 999;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  box-shadow: 0px 2px 3px #333, 0px -2px 5px #333;
+  padding-top: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  transition: all 1s;
+}
+.puisi.muncul {
+  transition: 1s;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.puisi.hilang {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(50%);
+}
+#button {
+  width: 50%;
+  margin: 15px 10px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid lightblue;
+  animation: button 1s infinite alternate;
+  font-family: "Rubik" !important ;
+  font-weight: bold;
+  background-color: gray;
+  color: #ddd;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: rgb(189, 175, 175);
+}
+
+#tutup {
+  display: block;
+  width: 25%;
+  margin: 10px auto;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 40px;
+  font-family: "Rubik" !important ;
+  font-weight: bold;
+  background-color: gray;
+  color: #ddd;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#tutup:hover {
+  background-color: rgb(189, 175, 175);
+}
+
+/* wx slider */
+.wx-slider {
+  width: 40%;
+  height: 400px;
+  margin: 0 auto;
+  border: 5px solid white;
+  position: relative;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  overflow: hidden;
+  font-family: Hammer;
+}
+
+.slider-item-list {
+  margin: 0;
+  padding: 0;
+}
+
+.slider-item-list li {
+  list-style: none;
+}
+
+.slider-item-list .slide,
+.slider-item-list .slide img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.slider-item-list .slide.active {
+  z-index: 10;
+}
+.caption-container {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  z-index: 10;
+  /* top: 285px; */
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 50px;
+}
+
+.galeri {
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+.galeri h5 {
+  font-size: 15px;
+  background-color: darkblue;
+  width: fit-content;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: 0.5s;
+}
+.galeri h5:hover {
+  box-shadow: 0 0 15px darkblue;
+}
+
+/* Animation */
+
+@keyframes h1 {
+  25% {
+    color: blue;
+  }
+  50% {
+    color: blueviolet;
+  }
+  75% {
+    color: gray;
+  }
+  100% {
+    color: darkslategray;
+  }
+}
+@keyframes tgl {
+  50% {
+    margin-left: 75%;
+    color: red;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes button {
+  50% {
+    box-shadow: 0 0 2px 1px gray;
+  }
+  75% {
+    box-shadow: 0 0 2px 2px darkgray;
+  }
+  100% {
+    box-shadow: 0 0 3px 3px darkslategray;
+  }
+}
+/* Media Query */
+
+@media (max-width: 600px) {
+  .balon1 {
+    position: absolute;
+    left: 10%;
+    width: 50px;
+  }
+  .balon2 {
+    position: absolute;
+    right: 10%;
+    width: 50px;
+  }
+  .wx-slider {
+    width: 90%;
+    height: 300px;
+  }
+  @keyframes tgl {
+    0% {
+      margin-left: 0;
+      color: blue;
+    }
+    50% {
+      margin-left: 40%;
+      color: red;
+    }
+  }
+  .gif {
+    position: absolute;
+    top: 610px;
+    left: 20px;
+    width: 70px;
+    margin-top: 0;
+    z-index: 1;
+  }
+  .dialog img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 2px solid #444;
+  }
+  .dialog h3 {
+    max-width: 160px;
+    font-size: 13px;
+    margin: auto 0;
+    border: 1px solid #ccc;
+    background-color: gray;
+    padding: 10px;
+    color: #ddd;
+    border-radius: 20px;
+    font-family: "Rubik";
+  }
+  .dialog audio {
+    width: 300px;
+    color: #222;
+    border: 1.5px solid #444;
+    border-radius: 30px;
+    margin: 10px;
+    box-shadow: 0px 0px 2px 1px #333;
+    outline: none;
+  }
+}
